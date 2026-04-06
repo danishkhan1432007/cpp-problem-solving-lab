@@ -7,7 +7,7 @@ int main (){
    if (num < 0 ){
     cout<<"Negative number \n";
    }
-    else if (num > 0) {
+    else if (num > 0) { 
     cout<<"positive number \n";
    }
    else {
