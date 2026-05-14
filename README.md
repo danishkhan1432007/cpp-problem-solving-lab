@@ -636,3 +636,145 @@ This is exactly how a **school result system** works:
 ## 👤 Author
 
 Danish
+
+######
+
+problem 7 in loops:
+# Shop Billing System — C++ Program
+
+A real world C++ program that calculates a customer's **total bill** and applies a **10% discount** if the total exceeds 5000 Rs using a `for` loop.
+
+---
+
+## 📋 Description
+
+The user enters the number of items they are buying. The program then takes the price of each item one by one, calculates the total bill, and applies a 10% discount if the total is above 5000 Rs. This is exactly how a shopping mall billing system works.
+
+---
+
+## 💻 Code
+
+```cpp
+#include <iostream>
+using namespace std;
+int main(){
+    int item, price, total = 0;
+    float discount;
+    cout << "Enter the number of items you buy: ";
+    cin >> item;
+    for (int i = 1; i <= item; i++){
+        cout << "Enter the item " << i << " price: ";
+        cin >> price;
+        total = total + price;
+    }
+    cout << "Total price: " << total << endl;
+    if (total >= 5000){
+        discount = total * 0.1;
+        cout << "You get 10% discount on total price: " << discount << endl;
+        cout << "Total price after discount: " << total - discount << endl;
+    }
+    else {
+        cout << "No discount for you" << endl;
+    }
+    return 0;
+}
+```
+
+---
+
+## ▶️ How to Run
+
+### Compile
+```bash
+g++ -o shop_billing shop_billing.cpp
+```
+
+### Execute
+```bash
+./shop_billing
+```
+
+---
+
+## 🧪 Example
+
+**With Discount:**
+```
+Enter the number of items you buy: 3
+
+Enter the item 1 price: 2000
+Enter the item 2 price: 1500
+Enter the item 3 price: 2500
+
+Total price: 6000
+You get 10% discount on total price: 600
+Total price after discount: 5400
+```
+
+**Without Discount:**
+```
+Enter the number of items you buy: 2
+
+Enter the item 1 price: 1000
+Enter the item 2 price: 500
+
+Total price: 1500
+No discount for you
+```
+
+---
+
+## 🔑 Discount Rules
+
+| Total Bill | Discount | Example |
+|------------|----------|---------|
+| Above 5000 Rs | 10% off | 6000 - 600 = 5400 Rs |
+| 5000 Rs or below | No discount | 1500 Rs stays 1500 Rs |
+
+**Discount Calculation:**
+```cpp
+discount = total * 0.1;         // 10% of total
+final    = total - discount;    // subtract discount
+```
+
+---
+
+## 🧠 Dry Run for 3 items (2000, 1500, 2500)
+
+| i | price | total          |
+|---|-------|----------------|
+| 1 | 2000  | 0 + 2000 = 2000 |
+| 2 | 1500  | 2000 + 1500 = 3500 |
+| 3 | 2500  | 3500 + 2500 = 6000 |
+
+**Total = 6000 → above 5000 → 10% discount applies**
+```
+Discount = 6000 * 0.1 = 600
+Final    = 6000 - 600 = 5400
+```
+
+---
+
+## 📌 Concepts Used
+
+- `for` loop
+- `if/else` condition
+- `float` for discount
+- Variable initialization
+- Taking input inside a loop
+
+---
+
+## 🌍 Real World Connection
+
+This is exactly how a **shopping mall billing system** works:
+- Cashier scans each item
+- System adds up the total
+- Discount is applied automatically if total exceeds a limit
+- Final bill is printed on the receipt
+
+---
+
+## 👤 Author
+
+Danish
