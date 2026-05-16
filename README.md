@@ -1201,3 +1201,280 @@ This is exactly how **PCB and cricket scorecards** work:
 ## 👤 Author
 
 Danish
+
+######
+
+problem 11 of loops concept:
+# ATM PIN System — C++ Program
+
+A real world C++ program that simulates an **ATM PIN verification system** using a `do while` loop. The user keeps entering their PIN until the correct one is entered.
+
+---
+
+## 📋 Description
+
+The program asks the user to enter their ATM PIN. If the PIN is wrong, it shows an error message and asks again. If the PIN is correct, it grants access and stops. This is exactly how a real ATM machine works.
+
+---
+
+## 💻 Code
+
+```cpp
+#include <iostream>
+using namespace std;
+int main(){
+    int pin;
+    do {
+        cout << "Please sir enter your ATM PIN: ";
+        cin >> pin;
+        if (pin != 1234){
+            cout << "Your PIN is wrong \n";
+        }
+        else {
+            cout << "Access granted! Welcome \n";
+            break;
+        }
+    } while(true);
+    return 0;
+}
+```
+
+---
+
+## ▶️ How to Run
+
+### Compile
+```bash
+g++ -o atm_pin atm_pin.cpp
+```
+
+### Execute
+```bash
+./atm_pin
+```
+
+---
+
+## 🧪 Example
+
+**Wrong PIN then correct PIN:**
+```
+Please sir enter your ATM PIN: 1111
+Your PIN is wrong
+
+Please sir enter your ATM PIN: 2222
+Your PIN is wrong
+
+Please sir enter your ATM PIN: 1234
+Access granted! Welcome
+```
+
+**Correct PIN first try:**
+```
+Please sir enter your ATM PIN: 1234
+Access granted! Welcome
+```
+
+---
+
+## 🔑 Key Concepts Explained
+
+**Why do while and not while?**
+
+The PIN must be entered **at least once** before checking — that is exactly what `do while` is for:
+
+```
+do   → ask for PIN first
+while → then check if we should ask again
+```
+
+**while(true) with break:**
+```cpp
+do {
+    // code
+} while(true);  // loop forever
+```
+This keeps looping until `break` is hit when correct PIN is entered. A clean and professional approach.
+
+---
+
+## 🧠 Dry Run
+
+| Attempt | PIN entered | Correct? | Action |
+|---------|------------|----------|--------|
+| 1       | 1111       | ❌ No    | Show error, loop again |
+| 2       | 2222       | ❌ No    | Show error, loop again |
+| 3       | 1234       | ✅ Yes   | Grant access, break |
+
+---
+
+## 📌 Concepts Used
+
+- `do while` loop
+- `if/else` condition
+- `break` statement
+- PIN verification logic
+
+---
+
+## 🌍 Real World Connection
+
+This is exactly how a real **ATM machine** works:
+- ATM always asks for PIN at least once
+- Wrong PIN shows error and asks again
+- Correct PIN grants access to account
+- (Real ATMs lock after 3 wrong attempts)
+
+---
+
+## 👤 Author
+
+Danish
+
+######
+
+problem 12 of loop concept:
+# Restaurant Menu System — C++ Program
+
+A real world C++ program that simulates a **restaurant ordering system** using a `do while` loop and `switch` statement. The menu keeps showing until the customer chooses to exit.
+
+---
+
+## 📋 Description
+
+The program displays a restaurant menu and asks the customer to select an item. The selected item is confirmed and the menu is shown again until the customer selects exit. This is exactly how a restaurant ordering system works.
+
+---
+
+## 💻 Code
+
+```cpp
+#include<iostream>
+using namespace std;
+int main(){
+    int choice;
+    cout << "Welcome to the restaurant sir, the menu is below\n";
+    cout << " 1. Burger \t 500 Rs\n 2. Pizza \t 800 Rs\n 3. Fries \t 200 Rs\n 4. Exit\n";
+    do {
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice){
+            case 1:
+                cout << "You ordered the Burger!";
+                break;
+            case 2:
+                cout << "You ordered the Pizza!";
+                break;
+            case 3:
+                cout << "You ordered the Fries!";
+                break;
+            case 4:
+                cout << "Exiting...\n";
+                break;
+            default:
+                cout << "Invalid choice!";
+        }
+    } while(choice != 4);
+    cout << "Thank you! Goodbye!\n";
+    return 0;
+}
+```
+
+---
+
+## ▶️ How to Run
+
+### Compile
+```bash
+g++ -o restaurant_menu restaurant_menu.cpp
+```
+
+### Execute
+```bash
+./restaurant_menu
+```
+
+---
+
+## 🧪 Example
+
+```
+Welcome to the restaurant sir, the menu is below
+ 1. Burger   500 Rs
+ 2. Pizza    800 Rs
+ 3. Fries    200 Rs
+ 4. Exit
+
+Enter your choice: 1
+You ordered the Burger!
+
+Enter your choice: 3
+You ordered the Fries!
+
+Enter your choice: 2
+You ordered the Pizza!
+
+Enter your choice: 4
+Exiting...
+Thank you! Goodbye!
+```
+
+---
+
+## 🔑 Key Concepts Explained
+
+**Why do while and not while?**
+
+The menu must be shown **at least once** before checking the choice — that is exactly what `do while` is for:
+
+```
+do   → show menu and take input first
+while → then check if user wants to exit
+```
+
+**Keeping the menu alive:**
+```cpp
+} while(choice != 4);  // keep looping until user selects 4
+```
+
+**Thank you message outside the loop:**
+```cpp
+} while(choice != 4);
+cout << "Thank you! Goodbye!\n";  // only prints after exit
+```
+
+---
+
+## 🧠 Dry Run
+
+| Choice | Item ordered | Loop continues? |
+|--------|-------------|-----------------|
+| 1      | Burger      | ✅ Yes           |
+| 3      | Fries       | ✅ Yes           |
+| 2      | Pizza       | ✅ Yes           |
+| 4      | Exit        | ❌ No, goodbye!  |
+
+---
+
+## 📌 Concepts Used
+
+- `do while` loop
+- `switch` statement
+- `break` statement
+- Menu driven program logic
+
+---
+
+## 🌍 Real World Connection
+
+This is exactly how a **restaurant ordering system** works:
+- Menu is always shown at least once
+- Customer keeps ordering until they are done
+- Exit option ends the session
+- Goodbye message is shown at the end
+
+---
+
+## 👤 Author
+
+Danish
